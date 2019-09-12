@@ -1,0 +1,15 @@
+package com.tchokoapps.springboot.spring5recipeapp.dto;
+
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.springframework.stereotype.Component;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@Component
+public class UnitOfMeasureDto {
+    private Long id;
+    private String description;
+}
