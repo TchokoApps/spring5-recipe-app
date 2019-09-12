@@ -23,9 +23,14 @@ public class IngredientToIngredientDto implements Converter<Ingredient, Ingredie
     public IngredientDto convert(@NotNull Ingredient ingredient) {
         IngredientDto ingredientDto = new IngredientDto();
         ingredientDto.setId(ingredient.getId());
+
+        if(ingredient.getRecipe() != null) {
+            ingredientDto.setRecipeId(ingredient.getRecipe().getId());
+        }
+
         ingredientDto.setAmount(ingredient.getAmount());
         ingredientDto.setDescription(ingredient.getDescription());
-        ingredientDto.setUom(ingredient.getUom());
+        ingredientDto.setUom(uomConverter.convert(ingredient.getUom()));
         return ingredientDto;
     }
 }

@@ -14,7 +14,8 @@ import java.math.BigDecimal;
 @Component
 public class IngredientDto {
     private Long id;
+    private Long recipeId;
     private String description;
     private BigDecimal amount;
-    private UnitOfMeasure uom;
+    private UnitOfMeasureDto uom;
 }
